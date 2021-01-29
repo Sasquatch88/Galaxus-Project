@@ -1,0 +1,94 @@
+.info {
+
+    &__heading {
+        grid-area: 3 / 2 / 4 / 10;
+        padding: 10rem;
+        height: 100%;
+
+        @include respond(phone) {
+            padding: 1rem;
+        }
+
+    }
+
+    &__header {
+        padding: 1rem; 
+        height: 100%;
+        @include bottomborder(15%);
+        margin-bottom: 5rem;
+
+    }
+
+    &__content {
+        grid-area: 4 / 2 / 5 / 10;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(38rem, 1fr));
+        grid-column-gap: 10rem;
+        grid-row-gap: 2rem;
+        justify-items: center;
+        align-content: center;
+
+        // @include respond(tab-small) {
+        //     grid-column-gap: 4rem;
+        //     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        // }
+
+        // @include respond(phone) {
+        //     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        // }
+    }
+
+    &__cardsinfo {
+        grid-area: 1 / 1 / 2 / -1;
+    }
+
+    &__p {
+        @include bottomborder(5rem);
+    }
+
+    &__card {
+        display: grid;
+        grid-template-rows: 15rem repeat(2, max-content); 
+        width: 100%;
+        height: 100%;
+        @include bottomborder(1rem);
+        transform: translateY(-5rem);
+
+        @include respond(tab-small) {
+            width: 80%;
+        }
+
+        @include respond(phone) {
+            width: 100%;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transform: translateY(5.6rem);
+        z-index: -1;
+        box-shadow: $box-shadow-primary;
+        box-shadow: $box-shadow-secondary;
+    }
+
+    &__name {
+        grid-row: 2 / 3;
+        padding: 1rem;
+        background-image: linear-gradient(70deg, 
+                                        rgba($color-grey-light, .4) 0%,
+                                        rgba($color-grey-light, .4) 73%,
+                                        transparent 73%);
+        text-align: center;
+    }
+
+    &__list {
+        grid-row: 3 / 4;
+        padding: 2rem 3rem;
+        list-style: circle;
+
+    }
+    
+}

@@ -1,0 +1,178 @@
+.solarsystem {
+    grid-area: 5 / 2 / 6 / 10;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    
+
+    &__heading {
+        padding: 2rem;
+        width: 100%;
+        height: 100%;
+        @include topborder(5rem);
+        grid-area: 1 / 1 / 2 / -1;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include bottomborder(5rem);
+
+        &-photo {
+            align-self: center;
+            width: 80%;
+        }
+
+        &-img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__content {
+        grid-area: 2 / 1 / 3 / -1;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(47rem, 1fr));
+        gap: 10rem;
+
+        @include respond(tab-small) {
+            // grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+            gap: 1rem;
+        }
+
+        &--heading {
+            grid-column: 1 / -1;
+        }
+
+        &--info {
+            width: 100%;
+            height: 100%;
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, min-content);
+            gap: 2.5rem;
+            
+
+            @include respond(desk-big) {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, min-content);
+                align-content: center;
+                justify-items: center;
+            }
+
+            @include respond(tab-big) {
+                width: 80%;
+                justify-self: center;
+                gap: 0;
+            }
+
+            @include respond(phone) {
+                width: 95%;
+            }
+            
+
+            &--name {
+                grid-area: 1 / 1 / 2 / -1;
+            }
+
+            &--image {
+                grid-area: 2 / 1 / 3 / 2;
+                height: 35rem;
+                width: auto;
+                clip-path: circle(44% at 50% 50%);
+                animation: scaleinfinite 15s linear infinite;
+
+                @include respond(desk-big) {
+                    grid-area: 2 / 1 / 3 / -1;
+                    height: 25rem;
+                }
+
+                @include respond(tab-small) {
+                    height: 15rem;
+                }
+
+                @include respond(phone) {
+                    height: 10rem;
+                }
+            }
+
+            &--imageSun {
+                grid-area: 2 / 1 / 3 / 2;
+                height: 35rem;
+                width: auto;
+                clip-path: circle(44% at 50% 50%);
+
+                @include respond(desk-big) {
+                    grid-area: 2 / 1 / 3 / -1;
+                    height: 25rem;
+                }
+
+                @include respond(tab-small) {
+                    height: 15rem;
+                }
+
+                @include respond(phone) {
+                    height: 10rem;
+                }
+            }
+
+            &__list {
+                grid-area: 2 / 2 / 3 / 3;
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                @include respond(desk-big) {
+                    grid-area: 3 / 1 / 4 / -1;
+                    justify-self: start;
+                }
+                
+                &--item {
+                    display: flex;
+
+                    @include respond(desk-big) {
+                        &:not(:last-child) {
+                            margin-bottom: 1rem;
+                        }
+                    }
+
+                    &-icon {
+                        width: 2.2rem;
+                        height: 2.2rem;
+                        margin-right: 1rem;
+                        fill: $color-font-fourth-dark;
+                    }
+
+                    &-text {
+                        font-size: 2rem;
+                        color: $color-grey-light-1;
+                    }
+                }
+            }
+
+            &--ps {
+                grid-area: 3 / 1 / -1 / -1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                @include bottomborder(3rem);
+                @include respond(desk-big) {
+                    grid-area: 4 / 1 / 5 / -1;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+

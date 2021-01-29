@@ -1,0 +1,8 @@
+.summary {
+    grid-area: 8 / 2 / 9 / 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include bottomborder(4rem);
+}

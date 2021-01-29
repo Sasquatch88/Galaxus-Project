@@ -1,0 +1,119 @@
+.btn__card {
+    border: none;
+    cursor: pointer;
+    margin-top: 2rem;
+    
+    &-full {width: 100%;}
+    &-partial {width: 60%; justify-self: center}
+
+    &,
+    &:link,
+    &:visited {
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 1.2rem;
+        border-radius: $border-radius-primary-medium;
+        color: $color-font-fourth-light;
+        font-size: $font-size-default;
+        background-color: $color-fifth;
+        transition: all .2s;
+    }
+
+    &:hover {
+        color: $color-fifth;
+        background-color: $color-font-fourth-light;
+        box-shadow: $box-shadow-tertiary;     
+    }
+    
+    &:active,
+    &:focus {
+        outline: none;
+        box-shadow: $box-shadow-tertiary;
+        transform: translateY(1.5px);
+    }
+}
+
+.btn-sign {
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 30%;
+    &,
+    &:link,
+    &:visited {
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 1.2rem;
+        border-radius: $border-radius-primary-medium;
+        color: $color-font-primary;
+        font-size: $font-size-default;
+        background-color: $color-sixth;
+        transition: all .2s;
+    }
+
+    &:hover {
+        color: $color-sixth;
+        background-color: $color-font-primary;
+        box-shadow: $box-shadow-tertiary;     
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+        box-shadow: $box-shadow-tertiary; 
+        transform: translateY(1.5px);
+    }
+}
+
+.newsletterform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // &__label {
+        
+    // }
+
+    &__input {
+        font-size: $font-size-medium;
+        font-family: $font-primary;
+        color: $color-font-fourth-dark;
+        padding: 2rem;
+        border-radius: $border-radius-primary-medium;
+        background-color: rgba($color-secondary, .7);
+        border: none;
+        border-bottom: 4px solid transparent;
+        width: 80%;
+
+        @include respond(phone) {
+            padding: 1rem;
+        }
+        
+        &:focus,
+        &:focus:valid {
+            outline: none;
+            border-bottom: 4px solid $color-font-fourth-dark;
+            box-shadow: $box-shadow-tertiary
+        }
+
+        &:focus:invalid {
+            border-bottom: 4px solid $color-sixth-dark;
+        }
+
+        &::-webkit-input-placeholder {
+            color: $color-font-fourth;
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover, 
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active {
+                                     
+            color: $color-font-fourth-dark;
+            background-color: rgba($color-secondary, .7);
+        }
+    }
+}
+

@@ -1,0 +1,161 @@
+//GLOBAL VARIABLES
+
+
+//COLORS
+
+$color-primary: #2d3436;
+$color-primary-dark: #16191a;
+$color-primary-light: #5b6a6e;
+$color-secondary: #34495e;
+$color-secondary-dark: #1c2732;
+$color-secondary-light: #4c6b8a;
+$color-secondary-lighter: #587ca0;
+$color-secondary-lightest: #8bafd3;
+$color-secondary-blueish: #4C3DFA;
+$color-secondary-blueish-light: #4C3FD7;
+$color-tertiary: #f1c40f;
+$color-tertiary-dark: #a28309;
+$color-tertiary-light: #f6d85f;
+$color-forth: #7066ff;
+$color-fifth: #3c6382;
+$color-sixth: #96281B;
+$color-sixth-dark: #5c1911;
+$color-sixth-light: #d93f2d;
+$color-sixth-lighter: #e47466;
+$color-grey-dark-1: #3c3c3c;
+$color-grey-dark-2: #343434;
+$color-grey-dark-3: #232323;
+$color-grey-light: #e2e2e2;
+$color-grey-light-1: #b3b3b3;
+$color-grey-light-2: #919191;
+$color-grey-light-3: #6f6f6f;
+$color-white: #fff;
+$color-black: #000;
+
+//FONT COLORS
+
+$color-font-primary: #74c2e2;
+$color-font-secondary: #2483ab;
+$color-font-tertiary: #0c2d3a;
+$color-font-fourth: #c69963;
+$color-font-fourth-light: #d8ba95;
+$color-font-fourth-dark: #a8773d;
+$color-font-fourth-darker: #6a4b27;
+
+//FONT FAMILIES
+
+$font-primary: 'Crimson Text', serif;
+$font-secondary: 'Libre Caslon Display', serif;
+$font-tertiary: 'Marcellus', serif;
+$font-heading-primary: 'Headland One', serif;
+$font-heading-secondary: 'Cinzel', serif;
+$font-heading-logo: 'Alegreya Sans SC', sans-serif;
+
+//FONT SIZES
+
+$font-size-small: 1.6rem;
+$font-size-default: 2rem;
+$font-size-huge: 4rem;
+$font-size-logo: 10rem;
+$font-size-big: 3rem;
+$font-size-large: 3.5rem;
+$font-size-medium: 2.6rem;
+
+//TEXT DECORATION
+
+$letter-spacing-medium: 2px;
+
+$line-height-default: 1.3;
+$text-indent-base: 3rem;
+
+$text-shadow-primary: 1px 2px 4px rgba($color-black, .7);
+$text-shadow-primary-light: 1px 2px 4px rgba($color-black, .6);
+$text-shadow-primary-lighter: 1px 1.5px 3px rgba($color-black, .6);
+$text-shadow-primary-small: .5px 1px 2px rgba($color-black, .8);
+$text-shadow-secondary: 1px 1.5px 3px rgba($color-secondary-lighter, .8);
+
+
+//BOX SHADOWS
+
+$box-shadow-primary: 0 2rem 4rem rgba($color-black, .8);
+$box-shadow-secondary: 2rem 0 4rem rgba($color-black, .8);
+$box-shadow-tertiary: .5rem .5rem 1rem rgba($color-tertiary-light, 0.3);
+
+//MISCELLENAUS
+
+$border-radius-primary: 10px;
+$border-radius-primary-medium: 15px;
+$border-radius-primary-big: 20px;
+$border-radius-primary-small: 5px;
+$border-radius-primary-huge: 10px;
+
+$border-radius-primary-top-right: 0 10px 0 0;
+$border-radius-primary-bottom: 0 0 10px 10px;
+
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; //1rem = 10px
+    height: 100%;
+
+    @include respond(tab-big) {
+        font-size: 50%; // 1rem = 8px
+    }
+
+    @include respond(tab-small) {
+        font-size: 37.5%; //1rem = 6px
+    }
+
+    @include respond(phone) {
+        font-size: 25%; //1rem = 4px
+    }
+}
+
+body {
+    position: relative;
+    height: 100%;
+}
+
+.bg-video {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -10;
+    opacity: .85;
+
+    &__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        background: transparent;
+        z-index: -11;    
+    }
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: calc(100vh + 8rem) repeat(9, max-content);
+    grid-template-columns: minmax(5rem, 1fr) repeat(8, minmax(min-content, 20rem)) minmax(5rem, 1fr);
+    transform: translateY(-8rem);
+    background-color: rgba($color-primary, .55);
+
+    @include respond(tab-small) {
+        grid-template-columns: minmax(3rem, 1fr) repeat(8, minmax(min-content, 20rem)) minmax(3rem, 1fr);
+    }
+
+}
+

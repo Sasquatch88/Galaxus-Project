@@ -1,0 +1,75 @@
+.header {
+    // background-color: $color-primary;
+    grid-area: 1 / 1 / 2 / -1;
+    position: relative;
+    // background-image: url(../Images/Planet-background-big.jpg);
+    background-image: linear-gradient(0deg, rgba($color-secondary, .99) 3%,
+                                                rgba($color-secondary, .001) 20%,
+                                                transparent 25%), url(../Images/Planet-background-big.jpg);
+    height: 100%;
+    // @include bottomborder(100%);
+
+    &__box {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+
+        display: grid;
+        grid-template-rows: 1fr 10rem 1fr;
+        align-items: center;
+        justify-items: center;
+        grid-gap: 1rem;
+        
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%, -50%);
+
+        perspective: 400px;
+
+        &-logo {
+            grid-row: 1 / 2;
+            align-self: end;
+            width: 50rem;
+            height: auto; 
+            // animation: scale-2 2s linear;
+            transform: translateY(5rem);
+            z-index: -5;
+            opacity: .5;
+
+            @include respond(tab-small) {
+                width: 35rem;
+            }
+
+            @include respond(phone) {
+                width: 20rem;
+            }
+            
+        }
+
+        &-p {
+            grid-row: 2 / 3;
+            color: transparent; 
+            animation: scale 5s linear;
+        }
+
+        &-heading {
+            grid-row: 3 / 4;
+            align-self: start;
+            top: 70%;
+            text-align: center;
+            animation: slide-in-back 20s linear;
+            transform: translateY(5rem);
+        }
+
+    }
+
+}
+
+.background-box {
+    grid-area: 2 / 1 / 3 / -1;
+    height: 20rem;
+    background-image: linear-gradient(180deg, rgba($color-secondary, .99) 35%,
+                                                rgba($color-secondary-light, .001) 95%,
+                                                transparent 100%);
+}

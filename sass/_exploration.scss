@@ -1,0 +1,170 @@
+.exploration {
+    background-image: linear-gradient(to right bottom, $color-secondary-dark, $color-secondary-light);
+    grid-area: 6 / 1 / 7 / -1;
+    display: grid;
+    grid-template-columns: minmax(5rem, 1fr) repeat(8, minmax(min-content, 20rem)) minmax(5rem, 1fr);
+    
+    
+    &__header {
+        grid-column: 2 / 10;
+        @include bottomborder(1rem);
+        &--image {
+            height: 30rem;
+            width: auto;
+            float: left;
+            margin: 2rem;
+            box-shadow: $box-shadow-primary;
+
+            @include respond(tab-small) {
+                height: 15rem;
+            }
+
+            @include respond(phone) {
+                height: 10rem;
+            }
+        }
+    }
+
+    &__story {
+        grid-column: 2 / 10;
+        display: flex;
+        flex-direction: column;
+        @include bottomborder(3rem);
+
+        &-header {
+
+            padding: 3rem 5rem;
+
+            &-info {
+                padding-right: 2rem;
+
+                @include respond(phone-small) {
+                    padding: 0 1rem;
+                }
+            }
+        }
+
+        &-content {
+            flex: 0 0 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(70rem, 1fr));
+            gap: 10rem;
+            width: 100%;
+            height: 100%;
+            
+            @include respond(tab-small) {
+                grid-template-columns: 1fr;
+            }
+
+            &-image {
+                height: 45rem;
+                width: auto;
+                background-size: cover;
+                position: relative;
+                box-shadow: $box-shadow-primary;
+                border-radius: $border-radius-primary-big;
+
+                @include respond(desk) {
+                    width: 70%;
+                    height: 35rem;
+                    justify-self: center;
+                }
+
+                @include respond(tab-small) {
+                    width: 100%;
+                    height: 28rem;
+                }
+
+                @include respond(phone) {
+                    height: 20rem;
+                }
+
+                // @include respond(phone-small) {
+                //     height: 10rem;
+                // }
+
+                &-box {
+                    width: 45%;
+                    height: 100%;
+                    position: absolute;
+                    right: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+
+                    @include respond(phone) {
+                        width: 70%;
+                    }
+
+                    @include respond(phone-small) {
+                        width: 100%;
+                    }
+                    
+                }
+                
+                &-1 {
+                    -webkit-background-image: -webkit-linear-gradient(-75deg, rgba($color-grey-light-1, .9) 0%,
+                                                          rgba($color-grey-light-2, .8) 50%,
+                                                          transparent 50%), url(../Images/space-station-big.jpeg);
+
+                    background-image: linear-gradient(-75deg, rgba($color-grey-light-1, .9) 0%,
+                                                          rgba($color-grey-light-2, .8) 50%,
+                                                          transparent 50%), url(../Images/space-station-big.jpeg);                                      
+                    @include respond(phone) {
+                        -webkit-background-image: -webkit-linear-gradient(-75deg, rgba($color-grey-light-1, .9) 0%,
+                                                          rgba($color-grey-light-2, .8) 75%,
+                                                          transparent 75%), url(../Images/space-station-small.jpg);
+
+                        background-image: linear-gradient(-75deg, rgba($color-grey-light-1, .9) 0%,
+                                                          rgba($color-grey-light-2, .8) 75%,
+                                                          transparent 75%), url(../Images/space-station-small.jpg);
+                    }
+                    
+                    @include respond(phone-small) {
+                        -webkit-background-image: -webkit-linear-gradient(rgba($color-grey-light-1, .6),
+                                        rgba($color-grey-light-2, .7)), url(../Images/space-station-small.jpg);
+
+                        background-image: -webkit-linear-gradient(rgba($color-grey-light-1, .6),
+                                        rgba($color-grey-light-2, .7)), url(../Images/space-station-small.jpg);
+                    }
+                }
+
+                &-2 {
+                    background-image: linear-gradient(-75deg, rgba($color-grey-light-1, .9) 0%,
+                                                          rgba($color-grey-light-2, .8) 50%,
+                                                          transparent 50%), url(../Images/JunoSond-big.jpg);
+                    @include respond(phone) {
+                        background-image: linear-gradient(-75deg, rgba($color-grey-light-1, .9) 0%,
+                                                          rgba($color-grey-light-2, .8) 75%,
+                                                          transparent 75%), url(../Images/JunoSond-small.jpg);
+                    }
+
+                    @include respond(phone-small) {
+                        background-image: linear-gradient(rgba($color-grey-light-1, .6),
+                                        rgba($color-grey-light-2, .7)), url(../Images/JunoSond-small.jpg);
+                    }
+                }
+
+                &-3 {
+                    background-image: linear-gradient(-75deg, rgba($color-grey-light-1, .9) 0%,
+                                                          rgba($color-grey-light-2, .8) 50%,
+                                                          transparent 50%), url(../Images/Voyager2-big.jpg);
+                    @include respond(phone) {
+                        background-image: linear-gradient(-75deg, rgba($color-grey-light-1, .9) 0%,
+                                                          rgba($color-grey-light-2, .8) 75%,
+                                                          transparent 75%), url(../Images/Voyager2-small.jpg);
+                                                        }
+
+                    @include respond(phone-small) {
+                        background-image: linear-gradient(rgba($color-grey-light-1, .6),
+                                        rgba($color-grey-light-2, .7)), url(../Images/Voyager2-small.jpg);
+                    }
+                }
+            }
+
+            &-text {
+                align-self: center;
+            }
+        }
+    }
+}

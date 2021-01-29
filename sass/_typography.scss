@@ -1,0 +1,98 @@
+.heading-1 {
+    font-size: $font-size-huge;
+    font-family: $font-heading-secondary;
+    text-shadow: $text-shadow-primary;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: $color-white;
+
+    &--light {color: $color-grey-light-1;}
+    &--dark {color: $color-grey-light-3;}
+    &--darkest {color: $color-font-fourth-darker;}
+    &--small {font-size: $font-size-big;}
+}
+
+.heading-2 {
+    font-size: $font-size-logo;
+    font-family: $font-heading-logo;
+    letter-spacing: 2.7rem;
+    text-shadow: $text-shadow-primary; 
+                    // 0 -5px 10px rgba($color-sixth-lighter, .6), 
+                    // 0 -10px 15px rgba($color-sixth-light, .5), 
+                    // 0 -15px 20px rgba($color-tertiary, .8);
+
+     @include respond(tab-small) {
+        letter-spacing: 1.5rem;
+    }
+
+    @include respond(phone) {
+        letter-spacing: 0;
+    }
+}
+
+.heading-3 {
+    font-size: $font-size-large;
+    font-family: $font-heading-secondary;
+    font-weight: 400;
+    color: $color-font-fourth;
+    margin-left: 2rem;
+    text-shadow: $text-shadow-primary-light;
+}
+
+.heading-4 {
+    font-size: $font-size-big;
+    font-family: $font-heading-secondary;
+    font-weight: 300;
+    color: $color-font-fourth;
+    margin-left: 1.5rem;
+    text-shadow: $text-shadow-primary-lighter;
+}
+
+.heading-5 {
+    font-size: $font-size-medium;
+    font-family: $font-primary;
+    font-weight: 600i;
+    color: $color-font-tertiary;
+    text-shadow: $text-shadow-primary-small;
+}
+
+.heading-6 {
+    font-size: $font-size-big;
+    font-family: $font-tertiary;
+    color: $color-font-fourth-dark;
+    letter-spacing: $letter-spacing-medium;
+    text-shadow: $text-shadow-secondary;
+
+}
+
+.paragraph {
+    font-size: $font-size-default;
+    line-height: $line-height-default;
+    color: $color-grey-light-1;
+    text-align: justify;
+    text-indent: $text-indent-base;
+    margin-bottom: 1.5rem;
+}
+
+.paragraph-2 {
+    font-size: $font-size-small;
+    line-height: $line-height-default;
+    color: $color-font-tertiary;
+    text-align: justify;
+    text-indent: $text-indent-base;
+}
+
+.subtitle {
+    font-size: $font-size-default;
+    font-family: $font-secondary;
+    color: $color-sixth-dark;
+    //text-shadow: $text-shadow-primary;
+}
+
+.text {
+    font-size: $font-size-default;
+    line-height: $line-height-default;
+    color: $color-grey-light-1;
+    text-align: justify;
+}
+

@@ -1,0 +1,53 @@
+@mixin bottomborder($height) {
+
+    &::after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    height: $height;
+    width: 90%;
+    border-bottom: .2px solid $color-grey-light-3;
+    }
+}
+
+@mixin topborder($height) {
+    &::before {
+        content: "";
+        display: block;
+        margin: 0 auto;
+        height: $height;
+        width: 90%;
+        border-top: .2px solid $color-grey-light-3;
+        }
+}
+
+@mixin respond($breakpoint) {
+
+    @if $breakpoint == phone-small {
+        @media only screen and (max-width: 25em) {@content}; //400px //only screen mean that the media query style will be applied only for the screen, when ege. somobeody wants to print there will be applied the default style
+    }
+
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) {@content}; //600px //only screen mean that the media query style will be applied only for the screen, when ege. somobeody wants to print there will be applied the default style
+    }
+
+    @if $breakpoint == tab-small {
+        @media only screen and (max-width: 56.5em) {@content}; //900px
+    }
+
+    @if $breakpoint == tab-small2 {
+        @media only screen and (max-width: 60em) {@content}; //960px
+    }
+
+    @if $breakpoint == tab-big {
+        @media only screen and (max-width: 75em) {@content}; //1200px
+    }
+
+    @if $breakpoint == desk {
+        @media only screen and (max-width: 100em) {@content}; //1600px
+    }
+
+    @if $breakpoint == desk-big {
+        @media only screen and (max-width: 112.5em) {@content}; //1800px
+    }
+}
